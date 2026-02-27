@@ -1,0 +1,21 @@
+# Build directories
+build/
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# IDE files
+.vscode/
+.idea/
+
+# Compiled files
+*.exe
+*.dll
+*.lib
+*.obj
+
+# Python files
+__pycache__/
+*.pyc

@@ -15,6 +15,17 @@ public:
     Config() : is2D(false), windowSize(100) {}
 };
 
+void printUsage() {
+    std::cout << "Usage: terminalGraph [options]\n";
+    std::cout << "Options:\n";
+    std::cout << "  -2d        Enable 2D mode\n";
+    std::cout << "  -f <file>  Specify data file path\n";
+    std::cout << "  -w <size>  Set window size (default: 100)\n";
+    std::cout << "  -h         Show this help message\n";
+    std::cout << "\n";
+    std::cout << "Example: terminalGraph -2d -f testData.txt -w 100\n";
+}
+
 Config parseArgs(int argc, char* argv[]) {
     Config config;
     int i = 1;
@@ -28,6 +39,9 @@ Config parseArgs(int argc, char* argv[]) {
         } else if (arg == "-w" && i + 1 < argc) {
             config.windowSize = std::stoi(argv[i + 1]);
             i++;
+        } else if (arg == "-h") {
+            printUsage();
+            exit(0);
         }
         i++;
     }
